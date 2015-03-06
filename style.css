@@ -1,0 +1,239 @@
+/* CSS designed by Robert M. Erickson */
+
+/* ===================  General Section  ==================================== */
+
+* {
+	font-size: 12pt;  /* sets the font size for all elements. */
+    /* look up reset style sheet */
+}
+
+@font-face {
+     font-family:"action";
+     src: url("action.ttf") format("truetype");font-weight:normal;font-style:normal;}
+* {
+	font-size: 12pt;  /* sets the font size for all elements. */
+    /* look up reset style sheet */
+}
+/*some header stuff */
+
+/*color scheme #0A67A3	#24587A	#03426A	#3E97D1	#65A6D1*/
+
+h1 {
+	color: #000000;
+	font-family: "action";
+	font-weight: bold;
+	font-size: 3em;
+}
+
+
+body {
+	background-color: #FFFFFF;
+	background-image: url(redbg.gif);
+        width: 60%;
+        min-width:940px;
+        margin:auto;
+        margin-top:0em;
+        margin-bottom:0em;
+}
+html{
+    background-color:#C0C0C0;
+}
+/* 00BEFF = blue color you want use */
+
+
+h2 {
+	color: #000000;
+	font-family: "sansserif";
+	font-weight: bold;
+	font-size: 1.25em;
+}
+
+h3 {
+	color: #000000;
+	font-family: 'times new roman';
+	font-weight: bold;
+	font-size: 1em;
+}
+
+h4 {
+	color: #000000;
+	font-family: "sansserif";
+	font-weight: bold;
+	font-size: .8em;	
+}
+
+h5 { 
+	color: #000000;
+	font-family: "sansserif";
+	font-weight: bold;
+	font-size: .6em;	
+}
+
+h6 {
+	color: #000000;
+	font-family: "sansserif";
+	font-weight: bold;
+	font-size: .5em;	
+}
+
+ol ol ol li {
+    list-style: lower-alpha
+}
+
+ol ol li {
+    font-weight: normal;
+    list-style: decimal;
+    padding-top: 0em
+}
+
+ol li {
+    font-weight: bold;
+    color: #000000;
+    list-style: upper-roman;
+    padding-top: 1em;
+    display: inline;
+}
+
+ul ul ul li { 
+	list-style: circle;
+}
+
+ul ul li { 
+	list-style: square;
+}
+
+ul li { 
+	list-style: none;
+}
+
+a:visited{
+    color:blue;
+}
+
+/* ===================  Header Section  ==================================== */
+/* now i would have a section that corresponds to my html sections.          */
+header{
+        text-align: center;
+}
+
+header div{
+    position:relative;
+}
+
+.header-login{
+    text-align: right;
+}
+
+.header-submit{
+    
+}
+
+.header-logout{
+    position: absolute;
+    right:5px;
+}
+
+.header-welcome{
+    position:absolute;
+    left:5px;
+}
+/*= ========= FOOTER SECTION ======================================*/
+footer {
+        text-align: center;
+        background-color:#0A67A3;
+}
+
+/* ====================================NAV SECTION===========================*/
+nav{
+    text-align: center;
+    font-family:"action";
+    background-color: crimson;
+    color: #FFFFFF;
+}
+
+
+nav a{
+    font-size: 1.5em;
+    text-decoration: none;
+    margin-right: .5em;
+    
+}
+
+nav li{
+    display:inline-block;
+}
+    /*colors for nav bar text. maybe use this one? 0ab837*/
+nav a:link {color: #000000;}      /* unvisited link */
+nav a:visited {color:#000000;}  /* visited link */
+nav a:hover {color:#C0C0C0;}  /* mouse over link */
+nav a:active {color:#0000FF;}
+
+/* -------------------------------------------------------------------------- */
+/* in my html code my body tag on the main page would have an id="main" so    */
+/* i would be able to create rules for just the main page.                    */
+#content{
+}
+
+#topping{
+    background-color:#0A67A3;
+}
+#main {
+    background-color: #FFFFFF;
+}
+/*#main p {
+    /* this rule will give all the paragraphs on the main page a first line  */
+    /* indent of 3 em. it only effects paragraphs that are contained inside  */
+    /* the element with the id of main, this replaces using an embeded or    */
+    /* level style 
+        color: #000000;
+	text-indent: 3em;
+        padding-left: 3em;
+}*/
+#categories{
+    text-align: center;
+}
+#categories p{
+    font-family: "action";
+	font-weight: bold;
+	font-size: 4em;
+}
+
+.news-box{
+    width: 33%;
+    margin:0;
+    padding: 0;
+    display:inline-block;
+}
+/*RULES ON POSTS*/
+.posted{
+    border-style: solid;
+    border-width: .3em;
+    margin-bottom:1em;
+    
+}
+.posted h2{
+    text-align:center;
+}
+.posted p{
+    text-align:left;
+}
+#txtContent{
+    height:10em;
+    width:30em;
+    font-weight: normal;
+    
+}
+#login{
+    text-align:right;
+    height: 0em;
+}
+#login p{
+    margin-top:0;
+}
+
+/* ===================  General Class Section  ============================= */
+/* I can add any generic classes here. Technically i can place these rules   */
+/* anywhere in the style sheet. This just helps to orgainize everything.     */
+.firstLine {
+	text-indent: 3em;
+}

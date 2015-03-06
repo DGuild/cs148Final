@@ -1,0 +1,49 @@
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+CREATE TABLE IF NOT EXISTS `tblCategory` (
+  `pkName` varchar(20) NOT NULL,
+  PRIMARY KEY (`pkName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `tblNews` (
+  `pkNewsId` int(5) NOT NULL AUTO_INCREMENT,
+  `fldTitle` varchar(100) NOT NULL,
+  `fldContent` text NOT NULL,
+  `fldDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fkEmail` varchar(50) NOT NULL,
+  PRIMARY KEY (`pkNewsId`),
+  KEY `fkEmail` (`fkEmail`),
+  KEY `fkEmail_2` (`fkEmail`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `tblNewsCategory` (
+  `fkNewsId` int(5) NOT NULL,
+  `fkName` varchar(20) NOT NULL,
+  KEY `fkNewsId` (`fkNewsId`),
+  KEY `fkName` (`fkName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `tblUser` (
+  `pkEmail` varchar(50) NOT NULL,
+  `fldFirstName` varchar(20) NOT NULL,
+  `fldLastName` varchar(20) NOT NULL,
+  PRIMARY KEY (`pkEmail`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE `tblNews`
+  ADD CONSTRAINT `tblNews_ibfk_1` FOREIGN KEY (`fkEmail`) REFERENCES `tblUser` (`pkEmail`);
+
+ALTER TABLE `tblNewsCategory`
+  ADD CONSTRAINT `tblNewsCategory_ibfk_2` FOREIGN KEY (`fkName`) REFERENCES `tblCategory` (`pkName`),
+  ADD CONSTRAINT `tblNewsCategory_ibfk_1` FOREIGN KEY (`fkNewsId`) REFERENCES `tblNews` (`pkNewsId`);
+
+#Below statements were added after initial database creation
+
+ALTER TABLE tblUser ADD COLUMN fldConfirmed INT(1) default 0;
+
+ALTER TABLE tblUser ADD fldPassword VARCHAR(20) NOT NULL AFTER pkEmail;
+
+
+
